@@ -6,7 +6,6 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <link rel="stylesheet" href="style.css">
-	  <link rel="stylesheet" href="http://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
@@ -15,47 +14,35 @@
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 		 <div class="navbar-header">
-		   <a class="navbar-brand" href="#" style="font-size: 30px; margin-bottom:3px;"><span class="glyphicon glyphicon-envelope" style="color: white;"></span>  zzAgenda</a>
+		   <a class="navbar-brand" href="http://fc.isima.fr/~raligorio/DevWeb/Projet/" style="font-size: 30px; margin-bottom:3px;"><span class="glyphicon glyphicon-envelope" style="color: white;"></span>  zzAgenda</a>
 		 </div>
 		 <div class="collapse navbar-collapse" id="myNavbar">
-		     <div class="nav navbar-nav navbar-right dropdown" style="margin-top:8px;">
+		 	<ul class="nav navbar-nav navbar-right">
+		 		<li><p style="font-size:20px; margin-top:15px; margin-right:15px;">Logged as <?php echo $_SESSION['username'] ?></p></li>
+		 		<li><a href="http://fc.isima.fr/~raligorio/DevWeb/Projet/" style="font-size:20px;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+		     <li class="dropdown" style="margin-top:8px; margin-right:15px;">
 		        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 		        Select Language
-			<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 		           <li><a href="en">English</a></li>
 		           <li><a href="fr">Français</a></li>
 		        </ul>
-		     </div>
-		   <ul class="nav navbar-nav navbar-right">
-		     <li><a href="#" data-toggle="modal" data-target="#login-modal" style="font-size:20px;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		        </li>
 		   </ul>
-		 </div>
 	  </div>
 	</nav>
-
-	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: center;">
-		<div class="modal-dialog">
-		<div class="loginmodal-container">
-			<h1>Login to Your Account</h1><br>
-				<form>
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-				 </form>
-		</div>
-	</div>
-	</div>
 
 	<div class="container-fluid text-center" style="margin-top:40px;">    
 	  <div class="row content">
 		 <div class="col-sm-2 sidenav">
 		 </div>
 		 <div class="col-sm-8 text-left"> 
-		   <h1>Create your very own Agenda !</h1>
+		   <button class="btn btn-primary" type="button">Ajouter un Evènement</button>
 		   <br>
-		   <h2>In a few easy steps it'll look like this :</h2>
+		   <br>
+		   <h1>Your Events</h1>
 		   <br>
 		   <h2>10h30 | Conférence 1</h2>
 		   <h4><span class="glyphicon glyphicon-bullhorn"></span> Conférence sur le jambon du WEI</h4>

@@ -17,7 +17,6 @@
   height: 100%;
 }
     
-/* Set white text and some padding */
 footer {
   position: absolute;
   right: 0;
@@ -34,7 +33,7 @@ footer {
   height: auto;
   padding: 15px;
 }
-  .row.content {height:auto;} 
+  .row.content {height:auto} 
 }
 
 

@@ -14,23 +14,28 @@
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 		 <div class="navbar-header">
+		 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		 		<span class="icon-bar"></span>
+		 		<span class="icon-bar"></span>
+		 		<span class="icon-bar"></span>
+		 	</button>
 		   <a class="navbar-brand" href="#" style="font-size: 30px; margin-bottom:3px;"><span class="glyphicon glyphicon-envelope" style="color: white;"></span>  zzAgenda</a>
 		 </div>
 		 <div class="collapse navbar-collapse" id="myNavbar">
-		     <div class="nav navbar-nav navbar-right dropdown" style="margin-top:8px;">
+		 	<ul class="nav navbar-nav navbar-right">
+		 		<li><a href="#" data-toggle="modal" data-target="#login-modal" style="font-size:20px;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		     <li class="dropdown" style="margin-top:8px; margin-right:15px;">
 		        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 		        Select Language
-			<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 		           <li><a href="en">English</a></li>
 		           <li><a href="fr">Français</a></li>
 		        </ul>
-		     </div>
-		   <ul class="nav navbar-nav navbar-right">
-		     <li><a href="#" data-toggle="modal" data-target="#login-modal" style="font-size:20px;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		        </li>
 		   </ul>
-		 </div>
+		  </div>
 	  </div>
 	</nav>
 
@@ -38,9 +43,9 @@
 		<div class="modal-dialog">
 		<div class="loginmodal-container">
 			<h1>Login to Your Account</h1><br>
-				<form>
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
+				<form method="post" action="login.php">
+					<input type="text" name="username" placeholder="Username">
+					<input type="password" name="password" placeholder="Password">
 					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
 				 </form>
 		</div>
@@ -58,9 +63,9 @@
 		   <br>
 		   <h2>10h30 | Conférence 1</h2>
 		   <h4><span class="glyphicon glyphicon-bullhorn"></span> Conférence sur le jambon du WEI</h4>
-		   <h4><span class="glyphicon glyphicon-map-marker"></span> ISIMA, Campus des Cézeaux</h4>
+		   <h4><span class="glyphicon glyphicon-map-marker"></span> Amphi Garcia, ISIMA, Campus des Cézeaux</h4>
 		   <h4><span class="glyphicon glyphicon-user"></span> Mr Mousse</h4>
-		   <h4><span class="glyphicon glyphicon-time"></span> 10h30</h4>
+		   <h4><span class="glyphicon glyphicon-time"></span> Vendredi 29 Septembre à 10h30</h4>
 		 </div>
 	  </div>
 	</div>
