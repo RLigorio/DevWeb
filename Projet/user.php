@@ -14,9 +14,17 @@
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 		 <div class="navbar-header">
+		 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		 		<span class="icon-bar"></span>
+		 		<span class="icon-bar"></span>
+		 		<span class="icon-bar"></span>
+		 	</button>
 		   <a class="navbar-brand" href="http://fc.isima.fr/~raligorio/DevWeb/Projet/" style="font-size: 30px; margin-bottom:3px;"><span class="glyphicon glyphicon-envelope" style="color: white;"></span>  zzAgenda</a>
 		 </div>
 		 <div class="collapse navbar-collapse" id="myNavbar">
+		 	<ul class="nav navbar-nav" style="font-size:20px; margin-top:13px;">
+		 		<li><a href="http://fc.isima.fr/~raligorio/DevWeb/Projet/maps.php">Maps</a></li>
+		 	</ul>
 		 	<ul class="nav navbar-nav navbar-right">
 		 		<li><p style="font-size:20px; margin-top:15px; margin-right:15px;">Logged as <?php echo $_SESSION['username'] ?></p></li>
 		 		<li><a href="http://fc.isima.fr/~raligorio/DevWeb/Projet/" style="font-size:20px;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
