@@ -8,7 +8,7 @@
 	$success = false;
 	foreach($userlist as $user) {
 		$user_details = explode(';', $user);
-		if ($user_details[0] == $userN && $user_details[1] == $passW) {
+		if ($user_details[0] == $userN && $user_details[1] == md5($passW)) {
 			$success = true;
 			$_SESSION["username"] = $userN;
 			break;
