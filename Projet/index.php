@@ -51,7 +51,7 @@
 		</div>
 	</div>
 	</div>
-
+	
 	<div class="container-fluid text-center" style="margin-top:40px;">    
 	  <div class="row content">
 		 <div class="col-sm-2 sidenav">
@@ -70,7 +70,7 @@
 	  </div>
 	</div>
 
-	<footer class="footer">
+	<footer class="footer container-fluid">
 	<div class="text-center">
 	  <p>© Copyright Raphaël Ligorio</p>
 	</div>

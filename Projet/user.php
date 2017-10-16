@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+	<?php session_start(); ?>
 	<head>
 	  <title>zzAgenda</title>
 	  <meta charset="utf-8">
@@ -23,11 +24,13 @@
 		 </div>
 		 <div class="collapse navbar-collapse" id="myNavbar">
 		 	<ul class="nav navbar-nav" style="font-size:20px; margin-top:13px;">
-		 		<li><a href="http://fc.isima.fr/~raligorio/DevWeb/Projet/maps.php">Maps</a></li>
+		 		<li><a href="#" data-toggle="modal" data-target="#login-modal" style="font-size:20px;">Maps</a></li>
 		 	</ul>
 		 	<ul class="nav navbar-nav navbar-right">
-		 		<li><p style="font-size:20px; margin-top:15px; margin-right:15px;">Logged as <?php echo $_SESSION['username'] ?></p></li>
-		 		<li><a href="http://fc.isima.fr/~raligorio/DevWeb/Projet/" style="font-size:20px;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+		 		<?php if(isset($_SESSION['username'])): ?>
+		 			<li><p style="font-size:20px; margin-top:15px; margin-right:15px;">Logged as <?php echo $_SESSION['username'] ?></p></li>
+		 		<?php endif; ?>
+		 		<li><a href="logout.php" style="font-size:20px;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 		     <li class="dropdown" style="margin-top:8px; margin-right:15px;">
 		        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 		        Select Language
@@ -42,6 +45,16 @@
 	  </div>
 	</nav>
 
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: center;">
+		<div class="modal-dialog">
+		<div class="mapsmodal-container">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2783.596024366213!2d3.109074716002895!3d45.75924417910547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1506964758042" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+	</div>
+	</div>
+	
+	
 	<div class="container-fluid text-center" style="margin-top:40px;">    
 	  <div class="row content">
 		 <div class="col-sm-2 sidenav">

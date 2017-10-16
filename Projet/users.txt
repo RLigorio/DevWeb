@@ -1,1 +1,1 @@
-toto|guest|
+toto;guest;
