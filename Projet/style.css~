@@ -83,6 +83,10 @@ input::-webkit-input-placeholder {
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
 }
 
+.modal-dialog {
+	margin: 70px auto;
+}
+
 .mapsmodal-container {
 	padding: 0px;
   max-width: 600px;
