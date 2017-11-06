@@ -22,6 +22,9 @@
 		   <a class="navbar-brand" href="#" style="font-size: 30px; margin-bottom:3px;"><span class="glyphicon glyphicon-envelope" style="color: white;"></span>  zzAgenda</a>
 		 </div>
 		 <div class="collapse navbar-collapse" id="myNavbar">
+		 	<ul class="nav navbar-nav" style="font-size:20px; margin-top:13px;">
+		 		<li><a href="#" data-toggle="modal" data-target="#login-modal" style="font-size:20px;"> </a></li>
+		 	</ul>
 		 	<ul class="nav navbar-nav navbar-right">
 		 		<li><a href="#" data-toggle="modal" data-target="#login-modal" style="font-size:20px;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 		     <li class="dropdown" style="margin-top:8px; margin-right:15px;">

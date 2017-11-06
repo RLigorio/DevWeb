@@ -77,7 +77,7 @@
 							<div class="form-group" style="text-align: center;">
 							<label for="Title" class="cols-sm-2 control-label" style="font-size: 30px;">Create Your Event</label>
 							</div>
-						
+					
 						<div class="form-group">
 							<label for="EventName" class="cols-sm-2 control-label">Event Name</label>
 							<div class="cols-sm-10">
@@ -127,8 +127,7 @@
 								</div>
 							</div>
 						</div>
-
-					
+						
 						<div class="form-group ">
 							<input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" value="Create Event">
 						</div>
@@ -181,17 +180,33 @@
 		 <div class="col-sm-2 sidenav">
 		 </div>
 		 <div class="col-sm-8 text-left"> 
+		   <?php if($_SESSION['admin']==1): ?>
 		   <button class="btn btn-primary" id="buttonAdd" data-toggle="modal" data-target="#event-modal" type="button">Add a New Event</button>
+		   <?php endif; ?>
+				   <br>
+				   <br>
+				   <h1>Your Events</h1>
+				   <br>
+				   <div class="col-sm-6 text-left">
+				   <h2>10h30 | Conférence 1</h2>
+				   <h4><span class="glyphicon glyphicon-bullhorn"></span> Conférence sur le jambon du WEI</h4>
+				   <h4><span class="glyphicon glyphicon-map-marker"></span> Amphi Garcia, ISIMA, Campus des Cézeaux</h4>
+				   <h4><span class="glyphicon glyphicon-user"></span> Mr Mousse</h4>
+				   <h4><span class="glyphicon glyphicon-time"></span> Vendredi 29 Septembre à 10h30</h4>
+				</div>
+			<div class="col-sm-6 text-left">
+								   <br>
+				   <br>
+		 <?php if($_SESSION['admin']==1): ?>
+		   <br>
+		   <button class="btn btn-primary" data-toggle="modal" data-target="#event-modal" type="button">Modify</button>
 		   <br>
 		   <br>
-		   <h1>Your Events</h1>
-		   <br>
-		   <h2>10h30 | Conférence 1</h2>
-		   <h4><span class="glyphicon glyphicon-bullhorn"></span> Conférence sur le jambon du WEI</h4>
-		   <h4><span class="glyphicon glyphicon-map-marker"></span> Amphi Garcia, ISIMA, Campus des Cézeaux</h4>
-		   <h4><span class="glyphicon glyphicon-user"></span> Mr Mousse</h4>
-		   <h4><span class="glyphicon glyphicon-time"></span> Vendredi 29 Septembre à 10h30</h4>
-		 </div>
+		   <button class="btn btn-danger" type="button">Delete</button>
+		   <?php endif; ?>
+		   </div>
+		</div>
+		 
 	  </div>
 	</div>
 
@@ -203,4 +218,3 @@
 
 	</body>
 </html>
-
