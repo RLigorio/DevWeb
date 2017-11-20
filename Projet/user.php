@@ -1,3 +1,15 @@
+<?php
+	
+	if ( (isset($_GET['langue'])) && ($_GET['langue'] == 'fr') )
+	{
+       	 	include_once('fr.php');
+    	}
+    	else // Langue par défaut (ici anglais)
+    	{
+        	include_once('en.php');
+    	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<?php session_start(); ?>
@@ -38,16 +50,16 @@
 		 </div>
 		 <div class="collapse navbar-collapse" id="myNavbar">
 		 	<ul class="nav navbar-nav" style="font-size:20px; margin-top:13px;">
-		 		<li><a href="#" data-toggle="modal" data-target="#login-modal" style="font-size:20px;">Maps</a></li>
+		 		<li><a href="#" data-toggle="modal" data-target="#login-modal" style="font-size:20px;"><?php echo $maps; ?></a></li>
 		 	</ul>
 		 	<ul class="nav navbar-nav navbar-right">
 		 		<?php if(isset($_SESSION['username'])): ?>
-		 			<li><p style="font-size:20px; margin-top:15px; margin-right:15px;">Logged as <?php echo $_SESSION['username'] ?></p></li>
+		 			<li><p style="font-size:20px; margin-top:15px; margin-right:15px;"><?php echo $logged; ?> <?php echo $_SESSION['username'] ?></p></li>
 		 		<?php endif; ?>
-		 		<li><a href="logout.php" style="font-size:20px;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+		 		<li><a href="logout.php" style="font-size:20px;"><span class="glyphicon glyphicon-log-out"></span> <?php echo $deco; ?></a></li>
 		     <li class="dropdown" style="margin-top:8px; margin-right:15px;">
 		        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		        Select Language
+		        <?php echo $langue; ?>
 						<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -75,15 +87,15 @@
 					<form class="eventmodal-container" method="post" action="event.php">
 						
 							<div class="form-group" style="text-align: center;">
-							<label for="Title" class="cols-sm-2 control-label" style="font-size: 30px;">Create Your Event</label>
+							<label for="Title" class="cols-sm-2 control-label" style="font-size: 30px;"><?php echo $bouton1; ?></label>
 							</div>
 					
 						<div class="form-group">
-							<label for="EventName" class="cols-sm-2 control-label">Event Name</label>
+							<label for="EventName" class="cols-sm-2 control-label"><?php echo $nom1; ?></label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
-									<input type="text" class="form-control" name="EventName" placeholder="Enter the event name"/>
+									<input type="text" class="form-control" name="EventName" placeholder="<?php echo $nom2; ?>"/>
 								</div>
 							</div>
 						</div>
@@ -93,27 +105,27 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-bullhorn"></span></span>
-									<textarea rows="4" class="form-control" name="EventDes" placeholder="Enter a description for your event"/></textarea>
+									<textarea rows="4" class="form-control" name="EventDes" placeholder="<?php echo $desc; ?>"/></textarea>
 								</div>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="EventPlace" class="cols-sm-2 control-label">Location</label>
+							<label for="EventPlace" class="cols-sm-2 control-label"><?php echo $loc1; ?></label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
-									<input type="text" class="form-control" name="EventPlace" placeholder="Enter where the event is taking place"/>
+									<input type="text" class="form-control" name="EventPlace" placeholder="<?php echo $loc2; ?>"/>
 								</div>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="EventSpeak" class="cols-sm-2 control-label">Speaker</label>
+							<label for="EventSpeak" class="cols-sm-2 control-label"><?php echo $speak1; ?></label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-									<input type="text" class="form-control" name="EventSpeak" placeholder="Enter the name of the speaker"/>
+									<input type="text" class="form-control" name="EventSpeak" placeholder="<?php echo $speak2; ?>"/>
 								</div>
 							</div>
 						</div>
@@ -129,7 +141,7 @@
 						</div>	
 						
 						<div class="form-group">
-							<label for="EventTime" class="cols-sm-2 control-label">Time</label>
+							<label for="EventTime" class="cols-sm-2 control-label"><?php echo $h; ?></label>
 							<div class="cols-sm-10">
 								<div class="input-group timePicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
@@ -140,7 +152,7 @@
 								
 
 						<div class="form-group ">
-							<input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" value="Create Event">
+							<input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" value="<?php echo $bouton4; ?>">
 						</div>
 						
 					</form>
@@ -193,11 +205,11 @@
 		 </div>
 		 <div class="col-sm-8 text-left"> 
 		   <?php if($_SESSION['admin']==1): ?>
-		   <button class="btn btn-primary" id="buttonAdd" data-toggle="modal" data-target="#event-modal" type="button">Add a New Event</button>
+		   <button class="btn btn-primary" id="buttonAdd" data-toggle="modal" data-target="#event-modal" type="button"><?php echo $bouton1; ?></button>
 		   <?php endif; ?>
 				   <br>
 				   <br>
-				   <h1>Your Events</h1>
+				   <h1><?php echo $titre; ?></h1>
 				   <br>
 				   <div class="col-sm-6 text-left">
 				   <h2>10h30 | Conférence 1</h2>
@@ -211,10 +223,10 @@
 				   <br>
 		 <?php if($_SESSION['admin']==1): ?>
 		   <br>
-		   <button class="btn btn-primary" data-toggle="modal" data-target="#event-modal" type="button">Modify</button>
+		   <button class="btn btn-primary" data-toggle="modal" data-target="#event-modal" type="button"><?php echo $bouton2; ?></button>
 		   <br>
 		   <br>
-		   <button class="btn btn-danger" type="button">Delete</button>
+		   <button class="btn btn-danger" type="button"><?php echo $bouton3; ?></button>
 		   <?php endif; ?>
 		   </div>
 		</div>
